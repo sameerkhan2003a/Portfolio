@@ -13,13 +13,13 @@ const contactLinks = [
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/sameerkhan",
+    value: "github.com/sameerkhan-a",
     href: "https://github.com/sameerkhan-a",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/sameerkhan",
+    value: "linkedin.com/in/sameerkhan-a-",
     href: "https://linkedin.com/in/sameerkhan-a-",
   },
 ]
