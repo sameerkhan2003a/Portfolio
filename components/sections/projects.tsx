@@ -10,7 +10,7 @@ const projects = [
     tech: ["React", "Node.js", "PostgreSQL", "Express", "Socket.io"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true,
+    featured: false,
   },
   {
     title: "MythAI",
@@ -18,7 +18,7 @@ const projects = [
     tech: ["React", "Node.js", "PostgreSQL", "Express", "NLP"],
     liveUrl: "#",
     githubUrl: "https://github.com/sameer-khan-a/MythAI",
-    featured: true,
+    featured: false,
   },
   {
     title: "Drexel Engagement System",
