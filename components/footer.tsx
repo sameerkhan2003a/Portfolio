@@ -15,7 +15,7 @@ export function Footer() {
           {/* Right - Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/sameerkhan"
+              href="https://github.com/sameer-khan-a"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -24,7 +24,7 @@ export function Footer() {
               <span className="sr-only">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/sameerkhan"
+              href="https://www.linkedin.com/in/sameer-khan-a-/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
