@@ -1,27 +1,38 @@
 "use client"
 
-import { Film, Globe, BookOpen, Compass } from "lucide-react"
+import { Film, Globe, BookOpen, Compass, PawPrint } from "lucide-react"
 
 const interests = [
   {
     icon: Film,
-    title: "Structured Storytelling",
-    items: ["Fargo", "True Detective", "Layered narratives"],
+    title: "Cinema & Story",
+    items: ["Fargo", "True Detective", "Slow-burn storytelling"],
   },
   {
     icon: Globe,
-    title: "Anthropology",
-    items: ["Human evolution", "Behavioral patterns", "Cultural systems"],
+    title: "Travel & Heritage",
+    items: [
+      "Hill stations",
+      "UNESCO sites",
+      "Belur & Halebidu",
+      "Kailasa Temple",
+      "Shravana Belagola",
+    ],
   },
   {
     icon: BookOpen,
-    title: "History",
-    items: ["Indian history", "Deccan history", "Historical systems"],
+    title: "History & Culture",
+    items: ["Indian history", "Deccan roots", "Cultural systems"],
   },
   {
     icon: Compass,
-    title: "Systems Thinking",
-    items: ["How things connect", "Why patterns emerge", "Meaningful structures"],
+    title: "Thinking Style",
+    items: ["Patterns", "Connections", "Why things work"],
+  },
+  {
+    icon: PawPrint,
+    title: "Nature & Animals",
+    items: ["Dogs", "Cats", "Wildlife", "Nature trips"],
   },
 ]
 
@@ -29,36 +40,43 @@ export function InterestsSection() {
   return (
     <section className="py-24 md:py-32 bg-card/30">
       <div className="mx-auto max-w-6xl px-6">
+        
         {/* Section Header */}
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">What Drives Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Beyond Code</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
+          
           {/* Left - Description */}
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I&apos;m interested in <span className="text-foreground font-medium">systems</span> — in software, history, and human behavior. I&apos;m drawn to things that are layered, structured, and meaningful.
+              I don’t just like building things — I like understanding them. Whether it’s a system, a story, or a place, I’m drawn to patterns and how everything connects.
             </p>
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              This perspective shapes how I build and teach. Everything connects. Patterns matter. Understanding the &quot;why&quot; unlocks the &quot;how&quot;.
+              Traveling to hill stations and historic sites like Belur, Halebidu, and the Kailasa temple shaped how I think — detail, structure, and intent behind every layer. That same mindset carries into how I build and teach.
             </p>
-            
+
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Outside of that, I enjoy being around animals and nature — dogs, cats, wildlife, anything real and unfiltered.
+            </p>
+
             <div className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 mt-8">
-              <h4 className="text-lg font-semibold text-foreground mb-3">Currently</h4>
+              <h4 className="text-lg font-semibold text-foreground mb-3">Right now</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Building full-stack + AI-supported systems
+                  Building full-stack apps with real-world use
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Training students in real-world development and AI
+                  Teaching development in a practical, no-fluff way
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Exploring better workflows using AI
+                  Exploring how AI fits into everyday workflows
                 </li>
               </ul>
             </div>
@@ -88,6 +106,7 @@ export function InterestsSection() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

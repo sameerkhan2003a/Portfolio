@@ -79,7 +79,7 @@ export function HeroSection() {
           {/* Social Links */}
           <div className="flex items-center gap-4 mt-6">
             <a
-              href="https://github.com/sameerkhan"
+              href="https://github.com/sameer-khan-a"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
@@ -88,7 +88,7 @@ export function HeroSection() {
               <span className="sr-only">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/sameerkhan"
+              href="https://www.linkedin.com/in/sameer-khan-a-/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
