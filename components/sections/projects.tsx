@@ -1,31 +1,30 @@
 "use client"
 
-import { ExternalLink, Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
 const projects = [
   {
     title: "TaskPilot",
-    description: "Real-time collaborative task management app with drag-and-drop boards, role-based access, and live notifications.",
+    description:
+      "Real-time collaborative task management app with drag-and-drop boards, role-based access, and live notifications.",
     tech: ["React", "Node.js", "PostgreSQL", "Express", "Socket.io"],
-    liveUrl: "#",
-    githubUrl: "#",
+    outcome: "Real-time systems, access control, and state synchronization",
     featured: false,
   },
   {
     title: "MythAI",
-    description: "NLP-powered platform to analyze and compare global myths using TF-IDF and cosine similarity.",
+    description:
+      "NLP-powered platform to analyze and compare global myths using TF-IDF and cosine similarity.",
     tech: ["React", "Node.js", "PostgreSQL", "Express", "NLP"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/sameer-khan-a/MythAI",
+    outcome: "Applied NLP concepts to extract meaning from unstructured text",
     featured: false,
   },
   {
     title: "Drexel Engagement System",
-    description: "Designed survey-driven workflows using Google Forms, Sheets, and Zapier to track user engagement and automate follow-ups.",
+    description:
+      "Designed survey-driven workflows using Google Forms, Sheets, and Zapier to track user engagement and automate follow-ups.",
     tech: ["Google Forms", "Google Sheets", "Zapier", "KPI Tracking", "Automation"],
-    liveUrl: "#",
-    githubUrl: "",
+    outcome: "Built a real-world automation pipeline with measurable engagement tracking",
     featured: false,
   },
 ]
@@ -35,6 +34,7 @@ export function ProjectsSection() {
     <section id="projects" className="py-24 md:py-32 bg-card/30">
       <div className="mx-auto max-w-6xl px-6">
 
+        {/* Header */}
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Selected Work</h2>
           <div className="flex-1 h-px bg-border" />
@@ -49,7 +49,7 @@ export function ProjectsSection() {
               {project.featured && (
                 <div className="absolute -top-3 left-6">
                   <span className="px-3 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-full">
-                    Featured
+                    Key Project
                   </span>
                 </div>
               )}
@@ -75,32 +75,13 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-border">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-muted-foreground hover:text-foreground"
-                  asChild
-                >
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live
-                  </a>
-                </Button>
+              {/* 🔥 New Bottom Section (replaces buttons) */}
+              <div className="pt-4 border-t border-border flex items-center justify-between">
+                <p className="text-xs text-muted-foreground">
+                  {project.outcome}
+                </p>
 
-                {project.githubUrl && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-muted-foreground hover:text-foreground"
-                    asChild
-                  >
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                )}
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
 
               <div className="absolute inset-0 rounded-xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-xl" />
