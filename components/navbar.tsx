@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
 ]
 
 export function Navbar() {
@@ -23,11 +23,21 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
+  // ✅ SINGLE scroll function (correct one)
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id)
+    if (!el) return
+
+    const navbarOffset = 80
+
+    const y =
+      el.getBoundingClientRect().top + window.pageYOffset - navbarOffset
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    })
+
     setIsMobileMenuOpen(false)
   }
 
@@ -41,8 +51,10 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between">
+          
+          {/* Logo */}
           <button
-            onClick={() => scrollToSection("#home")}
+            onClick={() => scrollToSection("home")}
             className="text-xl font-bold tracking-tight text-foreground hover:text-primary transition-colors"
           >
             SK<span className="text-primary">.</span>
@@ -53,7 +65,7 @@ export function Navbar() {
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => scrollToSection(link.href)}
+                onClick={() => scrollToSection(link.id)}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {link.name}
@@ -69,7 +81,11 @@ export function Navbar() {
             className="md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isMobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </Button>
         </div>
 
@@ -80,7 +96,7 @@ export function Navbar() {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
+                  onClick={() => scrollToSection(link.id)}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
                 >
                   {link.name}

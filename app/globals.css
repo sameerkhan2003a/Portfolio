@@ -55,7 +55,9 @@
   --sidebar-border: oklch(0.25 0.02 260);
   --sidebar-ring: oklch(0.7 0.22 330);
 }
-
+section {
+  scroll-margin-top: 100px;
+}
 .dark {
   --background: oklch(0.09 0.01 260);
   --foreground: oklch(0.98 0 0);
