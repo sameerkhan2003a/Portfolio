@@ -12,25 +12,25 @@ const teachingApproach = [
     icon: MessageSquare,
     title: "Approachable",
     description:
-      "Students learn best when they feel comfortable asking questions in a supportive environment with clear expectations.",
+      "A supportive environment where students feel comfortable asking questions and learning through discussion.",
   },
   {
     icon: Lightbulb,
     title: "Relatable",
     description:
-      "Technical concepts explained through simple language, real-world examples, and practical analogies.",
+      "Complex concepts explained using simple language, real-world examples, and practical analogies.",
   },
   {
     icon: Target,
     title: "Hands-On",
     description:
-      "Learning happens by building. Every concept is reinforced through live coding, projects, and practical exercises.",
+      "Students learn by building through live coding, projects, and practical exercises.",
   },
   {
     icon: CheckCircle,
-    title: "Engaging",
+    title: "Interactive",
     description:
-      "Interactive sessions designed to keep students involved, curious, and confident throughout the learning process.",
+      "Every session is engaging, collaborative, and focused on building confidence.",
   },
 ]
 
@@ -54,30 +54,30 @@ export function TeachingSection() {
           <div className="space-y-6 lg:col-span-2">
 
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl">
-              I believe software development is learned by building, not just
-              listening. My sessions combine practical development, relatable
-              examples, and hands-on learning so students understand both
+              I believe software development is learned by building. My classes
+              combine practical projects, relatable examples, and clear
+              explanations to help students understand not just
               <span className="font-medium text-foreground"> what </span>
-              they're building and
+              they're building, but
               <span className="font-medium text-foreground"> why </span>
               it works.
             </p>
 
             <div className="rounded-r-xl border-l-2 border-primary bg-card py-5 pl-5 sm:pl-6">
               <p className="text-base font-medium leading-relaxed text-foreground sm:text-lg lg:text-xl">
-                I teach like a mentor, not a lecturer. My goal is to make every
-                session practical, approachable, and genuinely enjoyable while
-                helping students become confident problem solvers.
+                I teach like a mentor, not a lecturer. Every session is
+                practical, approachable, and designed to make learning an
+                enjoyable experience.
               </p>
             </div>
 
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Over{" "}
+              I've delivered{" "}
               <span className="font-semibold text-primary">500+</span> hours of
-              live technical training have allowed me to mentor{" "}
+              technical training, mentoring{" "}
               <span className="font-semibold text-primary">100+</span> students
-              through projects, code reviews, interactive discussions, and
-              modern AI-assisted development workflows.
+              through projects, code reviews, AI-assisted workflows, and
+              interactive discussions.
             </p>
 
           </div>
