@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root{
-  --background:oklch(0.955 0.006 260);
-  --foreground:oklch(0.20 0.01 260);
+--background: oklch(0.93 0.005 260);
+--foreground: oklch(0.15 0.008 260);
 
   /* warmer elevated cards */
   --card:oklch(0.985 0.008 260);
