@@ -6,67 +6,85 @@ const teachingApproach = [
   {
     icon: Target,
     title: "Practical-First",
-    description: "Real projects from day one. No theoretical fluff that doesn't translate to actual work.",
+    description:
+      "Real projects from day one. No theoretical fluff that doesn't translate to actual work.",
   },
   {
     icon: MessageSquare,
     title: "Tight Explanations",
-    description: "Relatable, to-the-point explanations. Complex ideas broken down into simple mental models.",
+    description:
+      "Relatable, to-the-point explanations. Complex ideas broken down into simple mental models.",
   },
   {
     icon: Lightbulb,
     title: "Problem-Solving Focus",
-    description: "Teaching how to think through problems, not just memorize solutions.",
+    description:
+      "Teaching how to think through problems, not just memorize solutions.",
   },
   {
     icon: CheckCircle,
     title: "Hands-On Sessions",
-    description: "Hundreds of hours of live, project-based training with real feedback loops.",
+    description:
+      "Hundreds of hours of live, project-based training with real feedback loops.",
   },
 ]
 
 export function TeachingSection() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="py-16 sm:py-20 lg:py-28 xl:py-32">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">How I Teach</h2>
-          <div className="flex-1 h-px bg-border" />
+        <div className="mb-10 flex items-center gap-3 sm:gap-4 lg:mb-14">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+            How I Teach
+          </h2>
+          <div className="h-px flex-1 bg-border" />
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
-          {/* Left - Philosophy */}
-          <div className="lg:col-span-2 space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I train students in both <span className="text-foreground font-medium">development and AI usage</span>. My approach is simple: build real things and understand why they work.
+        <div className="grid items-start gap-12 lg:grid-cols-5 lg:gap-16 xl:gap-20">
+          {/* Left */}
+          <div className="space-y-6 lg:col-span-2">
+            <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl">
+              I train students in both{" "}
+              <span className="font-medium text-foreground">
+                development and AI usage
+              </span>
+              . My approach is simple: build real things and understand why
+              they work.
             </p>
-            
-            <blockquote className="border-l-2 border-primary pl-6 py-4">
-              <p className="text-lg text-foreground font-medium">
-                &quot;Most beginners struggle because they don&apos;t know how to think through problems. I fix that.&quot;
+
+            <blockquote className="border-l-2 border-primary pl-5 sm:pl-6">
+              <p className="text-base font-medium leading-relaxed text-foreground sm:text-lg lg:text-xl">
+                &quot;Most beginners struggle because they don't know how to
+                think through problems. I fix that.&quot;
               </p>
             </blockquote>
 
-            <p className="text-muted-foreground">
-              This approach has helped me train <span className="text-primary font-semibold">100+ students</span> through hundreds of hours of hands-on sessions.
+            <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              This approach has helped me train{" "}
+              <span className="font-semibold text-primary">
+                100+ students
+              </span>{" "}
+              through hundreds of hours of hands-on, project-based sessions.
             </p>
           </div>
 
-          {/* Right - Approach Cards */}
-          <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4">
+          {/* Right */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-3">
             {teachingApproach.map((item) => (
               <div
                 key={item.title}
-                className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+                className="group rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 sm:p-6"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="h-6 w-6 text-primary" />
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20 sm:h-14 sm:w-14">
+                  <item.icon className="h-6 w-6 text-primary sm:h-7 sm:w-7" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+
+                <h3 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+
+                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {item.description}
                 </p>
               </div>
