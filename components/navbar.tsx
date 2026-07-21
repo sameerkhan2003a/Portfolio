@@ -89,7 +89,7 @@ export function Navbar() {
             variant="ghost"
             size="icon"
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="h-11 w-11 rounded-xl md:hidden"
+            className="h-11 w-11 rounded-xl md:hidden mx-3"
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" />
