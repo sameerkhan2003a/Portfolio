@@ -64,10 +64,10 @@ export function AISection() {
               {aiUsages.map((usage) => (
                 <div
                   key={usage.text}
-                  className="flex items-start gap-4"
+                  className="group flex items-start gap-4 rounded-xl p-3 transition-all duration-300 hover:bg-muted/40"
                 >
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 sm:h-12 sm:w-12">
-                    <usage.icon className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
+                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground sm:h-12 sm:w-12">
+                    <usage.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-primary-foreground sm:h-6 sm:w-6" />
                   </div>
 
                   <p className="pt-1 text-sm leading-relaxed text-foreground sm:pt-2 sm:text-base lg:text-lg">
@@ -77,7 +77,7 @@ export function AISection() {
               ))}
             </div>
 
-            <div className="rounded-r-xl border-l-2 border-primary bg-card py-5 pl-5 sm:pl-6">
+            <div className="rounded-r-xl border-l-2 border-primary bg-card py-5 pl-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg sm:pl-6">
               <p className="text-base font-medium leading-relaxed text-foreground sm:text-lg lg:text-xl">
                 AI is my collaborator, not my replacement.
               </p>
@@ -92,10 +92,10 @@ export function AISection() {
 
           {/* Right */}
           <div className="space-y-6">
-            <div className="rounded-xl border border-border bg-card p-5 sm:p-6 lg:p-7">
+            <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl sm:p-6 lg:p-7">
               <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 sm:h-12 sm:w-12">
-                  <Wrench className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 transition-all duration-300 hover:bg-primary sm:h-12 sm:w-12">
+                  <Wrench className="h-5 w-5 text-primary transition-colors duration-300 hover:text-primary-foreground sm:h-6 sm:w-6" />
                 </div>
 
                 <h3 className="text-lg font-semibold text-foreground sm:text-xl lg:text-2xl">
@@ -107,7 +107,7 @@ export function AISection() {
                 {aiTools.map((tool) => (
                   <span
                     key={tool}
-                    className="cursor-default rounded-full bg-secondary px-3 py-2 text-xs font-medium text-secondary-foreground transition-colors hover:bg-primary/20 hover:text-primary sm:px-4 sm:text-sm"
+                    className="cursor-default rounded-full bg-secondary px-3 py-2 text-xs font-medium text-secondary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground hover:shadow-md sm:px-4 sm:text-sm"
                   >
                     {tool}
                   </span>
@@ -121,7 +121,7 @@ export function AISection() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 to-transparent p-5 sm:p-6 lg:p-7">
+            <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 to-transparent p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:from-primary/15 hover:shadow-xl sm:p-6 lg:p-7">
               <h4 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
                 My Approach
               </h4>
