@@ -4,32 +4,30 @@ import { ChevronRight } from "lucide-react"
 
 const caseStudies = [
   {
-    title: "TaskPilot — Real-Time Collaboration",
+    title: "Drexel University — International Collaboration",
     problem:
-      "Develop a collaborative task management platform that supports secure multi-user access, real-time communication, and efficient project organization.",
+      "Collaborate on an international automation project while working with teammates across different time zones, communication styles, and project workflows.",
 
     approach: [
-      "Designed a scalable PERN architecture with JWT authentication and role-based access control.",
-      "Implemented WebSocket-powered real-time updates for task synchronization and notifications.",
-      "Built responsive dashboards and Kanban workflows focused on usability and collaboration.",
+      "Worked closely with international students from Drexel University, learning how real software teams collaborate through meetings, discussions, task ownership, and milestone planning across different time zones.",
+      "Adapted to professional development practices by coordinating schedules, communicating effectively, and contributing to an automated customer engagement solution.",
     ],
 
     result:
-      "Delivered a secure, scalable project management platform that enables teams to collaborate seamlessly through real-time task tracking and intuitive workflows.",
+      "Successfully delivered the project while gaining valuable experience in international collaboration, cross-time-zone teamwork, professional communication, and real-world software development workflows.",
   },
   {
-    title: "Deccan Central — Information Architecture",
+    title: "V Tech — Client Requirement Analysis",
     problem:
-      "Build a single platform that presents South India's history, culture, architecture, wildlife, cuisine, and travel in a structured, engaging, and easy-to-navigate experience.",
+      "Develop a modern training institute website that satisfied business requirements while providing students with an intuitive and responsive user experience.",
 
     approach: [
-      "Designed a reusable React component architecture supporting multiple states and content categories.",
-      "Developed dynamic routing, responsive layouts, and consistent navigation for seamless exploration.",
-      "Organized extensive historical and cultural content using reusable data structures and optimized media assets.",
+      "Worked directly with the client to understand business goals, gather requirements, request missing content, and clarify project expectations before and during development.",
+      "Continuously incorporated client feedback, refined features, and validated design decisions to ensure the final product aligned with the client's vision.",
     ],
 
     result:
-      "Created a content-rich React platform that transforms complex regional information into an immersive, responsive, and accessible digital experience.",
+      "Delivered a production-ready website while gaining hands-on experience in client communication, requirement analysis, feedback-driven development, and professional project delivery.",
   },
 ]
 
