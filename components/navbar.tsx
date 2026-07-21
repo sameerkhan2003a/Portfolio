@@ -49,29 +49,29 @@ export function Navbar() {
 
   return (
     <nav
-      style={{
-        paddingTop: "env(safe-area-inset-top)",
-      }}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-[9999] transition-all duration-300 ${
         isScrolled
           ? "border-b border-border bg-background/80 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto w-full max-w-7xl px-3 sm:px-5 lg:px-8 xl:px-10">
+      <div
+        style={{
+          paddingTop: "env(safe-area-inset-top)",
+        }}
+        className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex h-16 sm:h-[72px] items-center justify-between">
           {/* Logo */}
-
           <button
             onClick={() => scrollToSection("home")}
-            className="text-base font-bold tracking-tight transition-colors hover:text-primary sm:text-xl lg:text-2xl"
+            className="text-lg font-bold tracking-tight transition-colors hover:text-primary sm:text-xl lg:text-2xl"
           >
             SK<span className="text-primary">.</span>
           </button>
 
           {/* Desktop */}
-
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="hidden items-center gap-6 lg:gap-8 md:flex">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -79,14 +79,12 @@ export function Navbar() {
                 className="group relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground lg:text-base"
               >
                 {link.name}
-
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </div>
 
-          {/* Mobile */}
-
+          {/* Mobile Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -102,25 +100,22 @@ export function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-
         <div
-          className={`overflow-hidden transition-all duration-300 md:hidden ${
+          className={`absolute left-4 right-4 top-full mt-2 origin-top rounded-2xl border border-border bg-background/95 p-2 shadow-2xl backdrop-blur-xl transition-all duration-300 md:hidden ${
             isMobileMenuOpen
-              ? "max-h-96 pb-3 opacity-100"
-              : "max-h-0 opacity-0"
+              ? "pointer-events-auto scale-100 opacity-100"
+              : "pointer-events-none scale-95 opacity-0"
           }`}
         >
-          <div className="rounded-2xl border border-border bg-background/95 p-2 shadow-xl backdrop-blur-xl">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="block w-full rounded-xl px-4 py-3 text-left text-base font-medium text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
-              >
-                {link.name}
-              </button>
-            ))}
-          </div>
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className="block w-full rounded-xl px-4 py-3 text-left text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              {link.name}
+            </button>
+          ))}
         </div>
       </div>
     </nav>
