@@ -59,9 +59,9 @@ export function Navbar() {
         style={{
           paddingTop: "env(safe-area-inset-top)",
         }}
-        className="relative mx-auto max-w-7xl pl-4 pr-2 sm:px-6 lg:px-8"
+        className="relative mx-auto w-[92%] max-w-7xl sm:w-[95%] md:w-[96%] lg:w-full"
       >
-        <div className="flex h-16 sm:h-[72px] items-center justify-between">
+        <div className="flex h-16 items-center justify-between sm:h-[72px]">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("home")}
@@ -70,7 +70,7 @@ export function Navbar() {
             SK<span className="text-primary">.</span>
           </button>
 
-          {/* Desktop */}
+          {/* Desktop Navigation */}
           <div className="hidden items-center gap-6 lg:gap-8 md:flex">
             {navLinks.map((link) => (
               <button
@@ -84,12 +84,12 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="mr-2 h-11 w-11 rounded-xl md:hidden"
+            className="h-11 w-11 rounded-xl md:hidden"
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" />
@@ -101,7 +101,7 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`absolute left-4 right-4 top-full mt-2 origin-top rounded-2xl border border-border bg-background/95 p-2 shadow-2xl backdrop-blur-xl transition-all duration-300 md:hidden ${
+          className={`absolute left-0 right-0 top-full mt-2 origin-top rounded-2xl border border-border bg-background/95 p-2 shadow-2xl backdrop-blur-xl transition-all duration-300 md:hidden ${
             isMobileMenuOpen
               ? "pointer-events-auto scale-100 opacity-100"
               : "pointer-events-none scale-95 opacity-0"
