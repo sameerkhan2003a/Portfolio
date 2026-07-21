@@ -4,28 +4,32 @@ import { ChevronRight } from "lucide-react"
 
 const caseStudies = [
   {
-    title: "TaskPilot — Collaborative System Design",
+    title: "TaskPilot — Real-Time Collaboration",
     problem:
-      "Managing tasks across multiple users with real-time updates required a robust architecture that could handle concurrent access and instant notifications.",
+      "Develop a collaborative task management platform that supports secure multi-user access, real-time communication, and efficient project organization.",
+
     approach: [
-      "Designed system architecture and access control for multi-user collaboration",
-      "Built notification logic for real-time updates using WebSockets",
-      "Focused on simplicity and responsiveness for seamless user experience",
+      "Designed a scalable PERN architecture with JWT authentication and role-based access control.",
+      "Implemented WebSocket-powered real-time updates for task synchronization and notifications.",
+      "Built responsive dashboards and Kanban workflows focused on usability and collaboration.",
     ],
+
     result:
-      "A scalable, multi-user system with smooth interaction and reliable real-time synchronization.",
+      "Delivered a secure, scalable project management platform that enables teams to collaborate seamlessly through real-time task tracking and intuitive workflows.",
   },
   {
-    title: "V Tech Website — Real Client Work",
+    title: "Deccan Central — Information Architecture",
     problem:
-      "Deliver a functional website aligned with real business needs while working within client constraints and expectations.",
+      "Build a single platform that presents South India's history, culture, architecture, wildlife, cuisine, and travel in a structured, engaging, and easy-to-navigate experience.",
+
     approach: [
-      "Translated client requirements into usable UI components",
-      "Prioritized clarity and usability over unnecessary complexity",
-      "Iterated based on client feedback for optimal results",
+      "Designed a reusable React component architecture supporting multiple states and content categories.",
+      "Developed dynamic routing, responsive layouts, and consistent navigation for seamless exploration.",
+      "Organized extensive historical and cultural content using reusable data structures and optimized media assets.",
     ],
+
     result:
-      "A clean, production-ready website that met all business requirements and user expectations.",
+      "Created a content-rich React platform that transforms complex regional information into an immersive, responsive, and accessible digital experience.",
   },
 ]
 
