@@ -17,7 +17,7 @@ const projects = [
     outcome:
       "Built scalable real-time collaboration with synchronized state and secure user management.",
     featured: true,
-    url: "https://github.com/sameer-khan-a/taskpilot", // Replace with your GitHub URL
+    url: "https://github.com/sameer-khan-a/Task_Pilot_PERN_Application", // Replace with your GitHub URL
     label: "View on GitHub",
   },
   {
