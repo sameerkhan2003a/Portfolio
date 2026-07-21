@@ -1,6 +1,11 @@
 "use client"
 
-import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react"
+import {
+  Mail,
+  Github,
+  Linkedin,
+  ArrowUpRight,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const contactLinks = [
@@ -25,9 +30,10 @@ const contactLinks = [
 ]
 
 const openTo = [
-  "Freelance Development",
-  "AI + Development Training",
-  "Collaborative Projects",
+  "Full-Stack Development",
+  "Technical Training",
+  "AI Solutions",
+  "Freelance Projects",
 ]
 
 export function ContactSection() {
@@ -37,7 +43,7 @@ export function ContactSection() {
       className="py-16 sm:py-20 lg:py-28 xl:py-32"
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
-        {/* Heading */}
+        {/* Section Header */}
         <div className="mb-10 flex items-center gap-3 sm:mb-14 sm:gap-4">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
             Work With Me
@@ -49,9 +55,9 @@ export function ContactSection() {
           {/* Left */}
           <div className="space-y-8">
             <p className="max-w-xl text-base leading-8 text-muted-foreground sm:text-lg lg:text-xl">
-              Have a project in mind? Looking for a technical trainer or a
-              development partner? I'm always interested in building useful
-              products and collaborating with great people.
+              Whether you're building a product, looking for a technical
+              trainer, or exploring AI-powered solutions, I'd love to hear how I
+              can help.
             </p>
 
             <div>
@@ -71,16 +77,37 @@ export function ContactSection() {
               </div>
             </div>
 
-            <Button
-              size="lg"
-              asChild
-              className="group w-full sm:w-fit"
-            >
-              <a href="mailto:sameerkhan003a@gmail.com">
-                Let's Talk
-                <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
-              </a>
-            </Button>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button
+                size="lg"
+                asChild
+                className="group"
+              >
+                <a href="mailto:sameerkhan003a@gmail.com">
+                  Let's Talk
+                  <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                </a>
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+              >
+                <a
+                  href="/Sameer_Khan_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Resume
+                </a>
+              </Button>
+            </div>
+
+            <p className="text-sm text-muted-foreground">
+              Currently available for full-time opportunities, freelance work,
+              and technical training.
+            </p>
           </div>
 
           {/* Right */}
@@ -95,7 +122,7 @@ export function ContactSection() {
                     ? undefined
                     : "noopener noreferrer"
                 }
-                className="group flex items-center gap-3 rounded-2xl border border-border bg-card p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+                className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
               >
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
                   <link.icon className="h-5 w-5 text-primary" />
@@ -111,7 +138,7 @@ export function ContactSection() {
                   </p>
                 </div>
 
-                <ArrowUpRight className="hidden h-5 w-5 flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary sm:block" />
+                <ArrowUpRight className="h-5 w-5 flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary" />
               </a>
             ))}
           </div>
