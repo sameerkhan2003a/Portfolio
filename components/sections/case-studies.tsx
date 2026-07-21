@@ -6,28 +6,28 @@ const caseStudies = [
   {
     title: "Drexel University — International Collaboration",
     problem:
-      "Collaborate on an international automation project while working with teammates across different time zones, communication styles, and project workflows.",
+      "Collaborate with an international team to deliver a customer engagement automation solution while adapting to distributed workflows and communication.",
 
     approach: [
-      "Worked closely with international students from Drexel University, learning how real software teams collaborate through meetings, discussions, task ownership, and milestone planning across different time zones.",
-      "Adapted to professional development practices by coordinating schedules, communicating effectively, and contributing to an automated customer engagement solution.",
+      "Worked with Drexel University students across time zones, coordinating tasks, meetings, and project milestones in a real-world team environment.",
+      "Applied collaborative development practices through continuous communication, shared ownership, and iterative problem-solving.",
     ],
 
     result:
-      "Successfully delivered the project while gaining valuable experience in international collaboration, cross-time-zone teamwork, professional communication, and real-world software development workflows.",
+      "Delivered the project while gaining practical experience in international collaboration, professional teamwork, and distributed software development.",
   },
   {
-    title: "V Tech — Client Requirement Analysis",
+    title: "V Tech — Client Collaboration",
     problem:
-      "Develop a modern training institute website that satisfied business requirements while providing students with an intuitive and responsive user experience.",
+      "Build a training institute website that met business goals while adapting to evolving client requirements throughout development.",
 
     approach: [
-      "Worked directly with the client to understand business goals, gather requirements, request missing content, and clarify project expectations before and during development.",
-      "Continuously incorporated client feedback, refined features, and validated design decisions to ensure the final product aligned with the client's vision.",
+      "Worked directly with the client to gather requirements, request content, and validate features before implementation.",
+      "Refined the website through continuous client feedback to ensure the final product matched business expectations.",
     ],
 
     result:
-      "Delivered a production-ready website while gaining hands-on experience in client communication, requirement analysis, feedback-driven development, and professional project delivery.",
+      "Delivered a production-ready website while strengthening skills in client communication, requirement analysis, and professional project delivery.",
   },
 ]
 
@@ -35,7 +35,6 @@ export function CaseStudiesSection() {
   return (
     <section className="py-16 sm:py-20 lg:py-28 xl:py-32">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
-        {/* Section Header */}
         <div className="mb-10 flex items-center gap-3 sm:gap-4 lg:mb-14">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
             Case Studies
@@ -43,40 +42,34 @@ export function CaseStudiesSection() {
           <div className="h-px flex-1 bg-border" />
         </div>
 
-        {/* Case Studies */}
         <div className="space-y-6 lg:space-y-8">
           {caseStudies.map((study, index) => (
             <div
               key={study.title}
               className="group rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 sm:p-6 lg:p-8"
             >
-              {/* Title */}
               <div className="mb-6 flex items-start gap-4">
                 <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-sm font-bold text-primary sm:h-11 sm:w-11">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <h3 className="text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-primary sm:text-xl lg:text-2xl">
+                <h3 className="text-lg font-semibold leading-tight transition-colors group-hover:text-primary sm:text-xl lg:text-2xl">
                   {study.title}
                 </h3>
               </div>
 
-              {/* Content */}
               <div className="grid gap-8 md:grid-cols-3">
-                {/* Problem */}
                 <div>
-                  <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
+                  <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                     Problem
                   </h4>
-
                   <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                     {study.problem}
                   </p>
                 </div>
 
-                {/* Approach */}
                 <div>
-                  <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
+                  <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                     Approach
                   </h4>
 
@@ -93,9 +86,8 @@ export function CaseStudiesSection() {
                   </ul>
                 </div>
 
-                {/* Result */}
                 <div>
-                  <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">
+                  <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                     Result
                   </h4>
 
