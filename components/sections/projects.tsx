@@ -6,34 +6,46 @@ const projects = [
   {
     title: "TaskPilot",
     description:
-      "Real-time collaborative task management app with drag-and-drop boards, role-based access, and live notifications.",
-    tech: ["React", "Node.js", "PostgreSQL", "Express", "Socket.io"],
+      "A real-time collaborative task management platform featuring drag-and-drop boards, role-based access, secure authentication, and live updates.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Socket.io",
+    ],
     outcome:
-      "Real-time systems, access control, and state synchronization",
+      "Built scalable real-time collaboration with synchronized state and secure user management.",
+    featured: true,
+  },
+  {
+    title: "Deccan Central",
+    description:
+      "A modern web platform showcasing the history, culture, architecture, wildlife, cuisine, and destinations of South India through an immersive digital experience.",
+    tech: [
+      "React",
+      "TypeScript",
+      "React Router",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    outcome:
+      "Designed a large-scale component-based application with responsive layouts and smooth user interactions.",
     featured: false,
   },
   {
     title: "MythAI",
     description:
-      "NLP-powered platform to analyze and compare global myths using TF-IDF and cosine similarity.",
-    tech: ["React", "Node.js", "PostgreSQL", "Express", "NLP"],
-    outcome:
-      "Applied NLP concepts to extract meaning from unstructured text",
-    featured: false,
-  },
-  {
-    title: "Drexel Engagement System",
-    description:
-      "Designed survey-driven workflows using Google Forms, Sheets, and Zapier to track user engagement and automate follow-ups.",
+      "An NLP-powered platform for exploring and comparing global myths using TF-IDF and cosine similarity techniques.",
     tech: [
-      "Google Forms",
-      "Google Sheets",
-      "Zapier",
-      "KPI Tracking",
-      "Automation",
+      "React",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "NLP",
     ],
     outcome:
-      "Built a real-world automation pipeline with measurable engagement tracking",
+      "Applied natural language processing to analyze and discover relationships within unstructured text.",
     featured: false,
   },
 ]
@@ -63,12 +75,11 @@ export function ProjectsSection() {
               {project.featured && (
                 <div className="absolute -top-3 left-6">
                   <span className="rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                    Key Project
+                    Featured Project
                   </span>
                 </div>
               )}
 
-              {/* Content */}
               <div className="flex flex-1 flex-col">
                 <h3 className="mb-3 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
                   {project.title}
@@ -90,7 +101,6 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              {/* Footer */}
               <div className="mt-auto flex items-center justify-between gap-4 border-t border-border pt-4">
                 <p className="flex-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
                   {project.outcome}
@@ -99,7 +109,6 @@ export function ProjectsSection() {
                 <ArrowRight className="h-5 w-5 flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary" />
               </div>
 
-              {/* Glow */}
               <div className="absolute inset-0 -z-10 rounded-2xl bg-primary/5 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
             </div>
           ))}
