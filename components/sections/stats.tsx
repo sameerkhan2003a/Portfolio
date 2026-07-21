@@ -25,7 +25,6 @@ const stats = [
     subtext: "Drexel University",
   },
 ]
-
 function AnimatedCounter({
   value,
   suffix,
@@ -35,44 +34,44 @@ function AnimatedCounter({
 }) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLDivElement>(null)
-  const [hasAnimated, setHasAnimated] = useState(false)
+  const hasAnimated = useRef(false)
 
   useEffect(() => {
-    let timer: NodeJS.Timeout
+    if (!ref.current) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true)
+        if (!entry.isIntersecting || hasAnimated.current) return
 
-          let start = 0
-          const duration = 2000
-          const increment = value / (duration / 16)
+        hasAnimated.current = true
 
-          timer = setInterval(() => {
-            start += increment
+        const duration = 2000
+        const startTime = performance.now()
 
-            if (start >= value) {
-              setCount(value)
-              clearInterval(timer)
-            } else {
-              setCount(Math.floor(start))
-            }
-          }, 16)
+        const animate = (currentTime: number) => {
+          const elapsed = currentTime - startTime
+          const progress = Math.min(elapsed / duration, 1)
+
+          setCount(Math.floor(progress * value))
+
+          if (progress < 1) {
+            requestAnimationFrame(animate)
+          } else {
+            setCount(value)
+          }
         }
+
+        requestAnimationFrame(animate)
       },
       {
         threshold: 0.4,
       }
     )
 
-    if (ref.current) observer.observe(ref.current)
+    observer.observe(ref.current)
 
-    return () => {
-      observer.disconnect()
-      if (timer) clearInterval(timer)
-    }
-  }, [value, hasAnimated])
+    return () => observer.disconnect()
+  }, [value])
 
   return (
     <div
@@ -84,7 +83,6 @@ function AnimatedCounter({
     </div>
   )
 }
-
 export function StatsSection() {
   return (
     <section className="bg-card/30 py-16 sm:py-20 lg:py-28 xl:py-32">
