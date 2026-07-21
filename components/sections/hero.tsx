@@ -14,12 +14,12 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center"
     >
       {/* Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -left-1/4 top-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl animate-pulse" />
-        <div className="absolute -right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-primary/10 blur-3xl animate-pulse delay-1000" />
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-primary/20 blur-3xl animate-pulse" />
+        <div className="absolute -right-40 bottom-20 h-80 w-80 rounded-full bg-primary/10 blur-3xl animate-pulse delay-1000" />
 
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -31,7 +31,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 py-32">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10 py-28 sm:py-32">
         <div className="flex flex-col items-start gap-6">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2">
@@ -46,28 +46,28 @@ export function HeroSection() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
             Sameer Khan A
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl font-medium text-muted-foreground md:text-2xl">
-            Full-Stack Developer{" "}
-            <span className="text-primary">•</span> AI Practitioner{" "}
-            <span className="text-primary">•</span> Technical Trainer
+          <p className="max-w-3xl text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl lg:text-2xl">
+            Full-Stack Developer <span className="text-primary">•</span> AI
+            Practitioner <span className="text-primary">•</span> Technical
+            Trainer
           </p>
 
           {/* Description */}
-          <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             I build scalable web apps, use AI to accelerate development, and
             train people to do both without losing the fundamentals.
           </p>
 
           {/* Buttons */}
-          <div className="mt-4 flex flex-wrap items-center gap-4">
+          <div className="mt-2 flex flex-col gap-3 sm:mt-4 sm:flex-row">
             <Button
               size="lg"
-              className="group"
+              className="group w-full sm:w-auto"
               onClick={() => scrollToSection("#projects")}
             >
               View Work
@@ -77,6 +77,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
+              className="w-full sm:w-auto"
               onClick={() => scrollToSection("#contact")}
             >
               Contact Me
@@ -84,40 +85,37 @@ export function HeroSection() {
           </div>
 
           {/* Social */}
-          <div className="mt-6 flex items-center gap-4">
+          <div className="mt-4 flex items-center gap-3 sm:mt-6 sm:gap-4">
             <a
               href="https://github.com/sameer-khan-a"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="rounded-xl p-2.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
               <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
             </a>
 
             <a
               href="https://www.linkedin.com/in/sameer-khan-a-/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="rounded-xl p-2.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
               <Linkedin className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
             </a>
 
             <a
               href="mailto:sameerkhan003a@gmail.com"
-              className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="rounded-xl p-2.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
               <Mail className="h-5 w-5" />
-              <span className="sr-only">Email</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* Scroll */}
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-bounce sm:block">
         <div className="flex h-10 w-6 justify-center rounded-full border-2 border-muted-foreground/30 pt-2">
           <div className="h-2 w-1 animate-pulse rounded-full bg-primary" />
         </div>
