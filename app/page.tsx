@@ -20,12 +20,7 @@ export default function Home() {
       <ProjectsSection />
       <CaseStudiesSection />
       <HowIBuildSection />
-      <AISection />
-      <StatsSection />
-      <TeachingSection />
-      <InterestsSection />
-      <ContactSection />
-      <Footer />
+ 
     </main>
   )
 }
