@@ -18,26 +18,29 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
+
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+      }
     }
 
     window.addEventListener("scroll", handleScroll)
 
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [isMobileMenuOpen])
 
   const scrollToSection = (id: string) => {
-    const el = document.getElementById(id)
-    if (!el) return
+    const section = document.getElementById(id)
 
-    const navbarOffset = 80
+    if (!section) return
 
-    const y =
-      el.getBoundingClientRect().top +
-      window.pageYOffset -
-      navbarOffset
+    const offset = 80
 
     window.scrollTo({
-      top: y,
+      top:
+        section.getBoundingClientRect().top +
+        window.pageYOffset -
+        offset,
       behavior: "smooth",
     })
 
@@ -49,42 +52,46 @@ export function Navbar() {
       style={{
         paddingTop: "env(safe-area-inset-top)",
       }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/70 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 border-b border-border"
+          ? "border-b border-border bg-background/80 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10 py-3 sm:py-4">
-        <div className="flex items-center justify-between">
+      <div className="mx-auto w-full max-w-7xl px-3 sm:px-5 lg:px-8 xl:px-10">
+        <div className="flex h-16 sm:h-[72px] items-center justify-between">
           {/* Logo */}
+
           <button
             onClick={() => scrollToSection("home")}
-            className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-foreground hover:text-primary transition-colors"
+            className="text-base font-bold tracking-tight transition-colors hover:text-primary sm:text-xl lg:text-2xl"
           >
             SK<span className="text-primary">.</span>
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-10">
+          {/* Desktop */}
+
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <button
-                key={link.name}
+                key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="relative group text-sm lg:text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="group relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground lg:text-base"
               >
                 {link.name}
+
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile */}
+
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden h-10 w-10 rounded-full"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className="h-11 w-11 rounded-xl md:hidden"
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" />
@@ -94,22 +101,27 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-3 overflow-hidden rounded-xl border border-border bg-background/95 backdrop-blur-xl shadow-lg">
-            <div className="flex flex-col py-2">
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => scrollToSection(link.id)}
-                  className="w-full px-5 py-3 text-left text-base font-medium text-muted-foreground transition-all hover:bg-muted/50 hover:text-foreground"
-                >
-                  {link.name}
-                </button>
-              ))}
-            </div>
+        {/* Mobile Menu */}
+
+        <div
+          className={`overflow-hidden transition-all duration-300 md:hidden ${
+            isMobileMenuOpen
+              ? "max-h-96 pb-3 opacity-100"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="rounded-2xl border border-border bg-background/95 p-2 shadow-xl backdrop-blur-xl">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="block w-full rounded-xl px-4 py-3 text-left text-base font-medium text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
+              >
+                {link.name}
+              </button>
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   )
