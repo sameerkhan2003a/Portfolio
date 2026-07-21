@@ -59,7 +59,7 @@ export function Navbar() {
         style={{
           paddingTop: "env(safe-area-inset-top)",
         }}
-        className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        className="relative mx-auto max-w-7xl pl-4 pr-2 sm:px-6 lg:px-8"
       >
         <div className="flex h-16 sm:h-[72px] items-center justify-between">
           {/* Logo */}
@@ -89,7 +89,7 @@ export function Navbar() {
             variant="ghost"
             size="icon"
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="h-11 w-11 rounded-xl md:hidden"
+            className="mr-2 h-11 w-11 rounded-xl md:hidden"
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" />
