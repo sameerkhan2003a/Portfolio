@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 
 const projects = [
   {
@@ -17,6 +17,8 @@ const projects = [
     outcome:
       "Built scalable real-time collaboration with synchronized state and secure user management.",
     featured: true,
+    url: "https://github.com/sameer-khan-a/taskpilot", // Replace with your GitHub URL
+    label: "View on GitHub",
   },
   {
     title: "Deccan Central",
@@ -30,8 +32,10 @@ const projects = [
       "Framer Motion",
     ],
     outcome:
-      "Designed a large-scale component-based application with responsive layouts and smooth user interactions.",
+      "Designed a large-scale component-driven application with responsive layouts, immersive UI, and optimized performance.",
     featured: false,
+    url: "https://deccan-central-neon.vercel.app/",
+    label: "Visit Website",
   },
   {
     title: "MythAI",
@@ -47,6 +51,8 @@ const projects = [
     outcome:
       "Applied natural language processing to analyze and discover relationships within unstructured text.",
     featured: false,
+    url: "https://github.com/sameer-khan-a/mythai", // Replace with your GitHub URL
+    label: "View on GitHub",
   },
 ]
 
@@ -70,18 +76,18 @@ export function ProjectsSection() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group relative flex h-full flex-col rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 sm:p-6"
+              className="group relative flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
             >
               {project.featured && (
                 <div className="absolute -top-3 left-6">
                   <span className="rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                    Featured Project
+                    Flagship Project
                   </span>
                 </div>
               )}
 
               <div className="flex flex-1 flex-col">
-                <h3 className="mb-3 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
+                <h3 className="mb-3 text-xl font-semibold transition-colors group-hover:text-primary">
                   {project.title}
                 </h3>
 
@@ -93,7 +99,7 @@ export function ProjectsSection() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground sm:px-3"
+                      className="rounded-md bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
                     >
                       {tech}
                     </span>
@@ -101,12 +107,20 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="mt-auto flex items-center justify-between gap-4 border-t border-border pt-4">
-                <p className="flex-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+              <div className="border-t border-border pt-4">
+                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                   {project.outcome}
                 </p>
 
-                <ArrowRight className="h-5 w-5 flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary" />
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-all hover:gap-3"
+                >
+                  {project.label}
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
               </div>
 
               <div className="absolute inset-0 -z-10 rounded-2xl bg-primary/5 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
