@@ -26,22 +26,32 @@ const stats = [
   },
 ]
 
-function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
+function AnimatedCounter({
+  value,
+  suffix,
+}: {
+  value: number
+  suffix: string
+}) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLDivElement>(null)
   const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
+    let timer: NodeJS.Timeout
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true)
+
           let start = 0
           const duration = 2000
           const increment = value / (duration / 16)
-          
-          const timer = setInterval(() => {
+
+          timer = setInterval(() => {
             start += increment
+
             if (start >= value) {
               setCount(value)
               clearInterval(timer)
@@ -49,22 +59,26 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
               setCount(Math.floor(start))
             }
           }, 16)
-          
-          return () => clearInterval(timer)
         }
       },
-      { threshold: 0.5 }
+      {
+        threshold: 0.4,
+      }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
+    if (ref.current) observer.observe(ref.current)
 
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      if (timer) clearInterval(timer)
+    }
   }, [value, hasAnimated])
 
   return (
-    <div ref={ref} className="text-5xl md:text-6xl font-bold text-foreground">
+    <div
+      ref={ref}
+      className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+    >
       {count}
       <span className="text-primary">{suffix}</span>
     </div>
@@ -73,34 +87,49 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export function StatsSection() {
   return (
-    <section className="py-24 md:py-32 bg-card/30">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Section Header */}
-        <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Proof</h2>
-          <div className="flex-1 h-px bg-border" />
+    <section className="bg-card/30 py-16 sm:py-20 lg:py-28 xl:py-32">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
+        {/* Header */}
+        <div className="mb-10 flex items-center gap-3 sm:gap-4 lg:mb-14">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+            Proof
+          </h2>
+
+          <div className="h-px flex-1 bg-border" />
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Stats */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="text-center p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors"
+              className="rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 sm:p-7"
             >
-              <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              <p className="text-muted-foreground mt-2 font-medium">{stat.label}</p>
+              <AnimatedCounter
+                value={stat.value}
+                suffix={stat.suffix}
+              />
+
+              <p className="mt-3 text-sm font-medium text-muted-foreground sm:text-base">
+                {stat.label}
+              </p>
+
               {stat.subtext && (
-                <p className="text-sm text-primary mt-1">{stat.subtext}</p>
+                <p className="mt-2 text-sm text-primary">
+                  {stat.subtext}
+                </p>
               )}
             </div>
           ))}
         </div>
 
-        {/* Additional Proof Points */}
-        <div className="mt-12 p-8 rounded-xl bg-card border border-border">
-          <h3 className="text-xl font-semibold text-foreground mb-6">Problems I&apos;ve Solved</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Problems Solved */}
+        <div className="mt-10 rounded-2xl border border-border bg-card p-6 sm:mt-12 sm:p-8">
+          <h3 className="mb-6 text-xl font-semibold text-foreground sm:text-2xl">
+            Problems I've Solved
+          </h3>
+
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {[
               "Built a real-time notification system with complex state handling",
               "Designed multi-user collaboration logic from scratch",
@@ -111,10 +140,13 @@ export function StatsSection() {
             ].map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50"
+                className="flex items-start gap-3 rounded-xl bg-secondary/50 p-4"
               >
-                <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <p className="text-sm text-muted-foreground">{item}</p>
+                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+
+                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
