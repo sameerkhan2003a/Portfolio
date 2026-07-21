@@ -1,23 +1,29 @@
 "use client"
 
-import { Sparkles, Code, Lightbulb, BookOpen, Wrench } from "lucide-react"
+import {
+  Sparkles,
+  Code,
+  Lightbulb,
+  BookOpen,
+  Wrench,
+} from "lucide-react"
 
 const aiUsages = [
   {
     icon: Code,
-    text: "Speed up development (boilerplate, debugging, iteration)",
+    text: "Prototype ideas, debug issues, and iterate on implementations faster.",
   },
   {
     icon: Lightbulb,
-    text: "Explore solutions faster",
+    text: "Research technologies, compare approaches, and validate technical decisions.",
   },
   {
     icon: Sparkles,
-    text: "Structure ideas and workflows",
+    text: "Refine user interfaces, improve code quality, and overcome development roadblocks.",
   },
   {
     icon: BookOpen,
-    text: "Create and refine learning material",
+    text: "Design presentations, training material, quizzes, and technical documentation.",
   },
 ]
 
@@ -39,7 +45,7 @@ export function AISection() {
         {/* Section Header */}
         <div className="mb-10 flex items-center gap-3 sm:gap-4 lg:mb-14">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-            AI & How I Use It
+            AI in My Workflow
           </h2>
           <div className="h-px flex-1 bg-border" />
         </div>
@@ -48,8 +54,10 @@ export function AISection() {
           {/* Left */}
           <div className="space-y-8">
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl">
-              AI is a core part of how I work, but not a replacement for
-              thinking.
+              AI is an integral part of my workflow. I use it to accelerate
+              development, research unfamiliar topics, refine ideas, improve
+              code quality, and create technical learning content while keeping
+              the architecture, trade-offs, and engineering decisions my own.
             </p>
 
             <div className="space-y-5">
@@ -69,16 +77,17 @@ export function AISection() {
               ))}
             </div>
 
-            <blockquote className="rounded-r-xl border-l-2 border-primary bg-card py-5 pl-5 sm:pl-6">
-              <p className="text-base font-medium italic leading-relaxed text-foreground sm:text-lg lg:text-xl">
-                &quot;I design the solution, break the problem down, and make
-                the decisions. AI helps me execute faster.&quot;
+            <div className="rounded-r-xl border-l-2 border-primary bg-card py-5 pl-5 sm:pl-6">
+              <p className="text-base font-medium leading-relaxed text-foreground sm:text-lg lg:text-xl">
+                AI is my collaborator, not my replacement.
               </p>
 
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                I treat AI as leverage, not a crutch.
+                It helps me learn faster, explore better solutions, and execute
+                more efficiently, while I remain responsible for every design,
+                implementation, and technical decision.
               </p>
-            </blockquote>
+            </div>
           </div>
 
           {/* Right */}
@@ -90,7 +99,7 @@ export function AISection() {
                 </div>
 
                 <h3 className="text-lg font-semibold text-foreground sm:text-xl lg:text-2xl">
-                  AI Tools I Work With
+                  AI Tools I Use
                 </h3>
               </div>
 
@@ -106,20 +115,23 @@ export function AISection() {
               </div>
 
               <p className="mt-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                I use tools based on what solves the problem best, not brand
-                loyalty.
+                I choose tools based on the problem I'm solving, combining
+                different models and platforms to improve productivity rather
+                than relying on a single ecosystem.
               </p>
             </div>
 
             <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 to-transparent p-5 sm:p-6 lg:p-7">
               <h4 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
-                The Difference
+                My Approach
               </h4>
 
               <p className="text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg">
-                Most people use AI to replace thinking. I use it to amplify
-                thinking. The architecture, the problem breakdown, and the
-                critical decisions remain human. AI accelerates the execution.
+                I use AI to accelerate research, debugging, UI refinement,
+                documentation, and content creation. It reduces repetitive work
+                and expands what's possible, but every architectural choice,
+                implementation strategy, and final review remains my
+                responsibility.
               </p>
             </div>
           </div>
