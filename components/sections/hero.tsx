@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, FileText, Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
@@ -55,16 +55,16 @@ export function HeroSection() {
 
           {/* Roles */}
           <p className="max-w-3xl text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl lg:text-2xl">
-            Full-Stack Developer{" "}
-            <span className="text-primary">•</span> Technical Trainer{" "}
-            <span className="text-primary">•</span> AI Practitioner
+            Full-Stack Developer <span className="text-primary">•</span>{" "}
+            Technical Trainer <span className="text-primary">•</span> AI
+            Practitioner
           </p>
 
           {/* Description */}
           <p className="max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
-            Building scalable web applications, leveraging AI to accelerate
-            modern development workflows, and mentoring aspiring developers
-            through practical, fundamentals-first software engineering.
+            Building scalable web applications, integrating AI into modern
+            development workflows, and mentoring aspiring developers through
+            practical, hands-on learning.
           </p>
 
           {/* CTA Buttons */}
@@ -81,10 +81,17 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
+              asChild
               className="w-full sm:w-auto"
-              onClick={() => scrollToSection("#contact")}
             >
-              Contact Me
+              <a
+                href="/Sameer_Khan_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FileText className="mr-2 h-4 w-4" />
+                View Resume
+              </a>
             </Button>
           </div>
 
@@ -95,7 +102,7 @@ export function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:bg-secondary hover:text-foreground hover:scale-110"
+              className="rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-secondary hover:text-foreground"
             >
               <Github className="h-5 w-5" />
             </a>
@@ -105,7 +112,7 @@ export function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:bg-secondary hover:text-foreground hover:scale-110"
+              className="rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-secondary hover:text-foreground"
             >
               <Linkedin className="h-5 w-5" />
             </a>
@@ -113,7 +120,7 @@ export function HeroSection() {
             <a
               href="mailto:sameerkhan003a@gmail.com"
               aria-label="Email"
-              className="rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:bg-secondary hover:text-foreground hover:scale-110"
+              className="rounded-xl p-2.5 text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-secondary hover:text-foreground"
             >
               <Mail className="h-5 w-5" />
             </a>
