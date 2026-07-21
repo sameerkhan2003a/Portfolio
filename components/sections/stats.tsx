@@ -6,25 +6,26 @@ const stats = [
   {
     value: 100,
     suffix: "+",
-    label: "Students Trained",
+    label: "Students Mentored",
   },
   {
     value: 500,
     suffix: "+",
-    label: "Hours of Teaching",
+    label: "Hours of Technical Training",
   },
   {
-    value: 5,
+    value: 6,
     suffix: "+",
-    label: "Full-Stack Apps Deployed",
+    label: "Full-Stack Applications",
   },
   {
     value: 1,
     suffix: "",
-    label: "International Collaboration",
+    label: "International Project",
     subtext: "Drexel University",
   },
 ]
+
 function AnimatedCounter({
   value,
   suffix,
@@ -83,6 +84,7 @@ function AnimatedCounter({
     </div>
   )
 }
+
 export function StatsSection() {
   return (
     <section className="bg-card/30 py-16 sm:py-20 lg:py-28 xl:py-32">
@@ -90,7 +92,7 @@ export function StatsSection() {
         {/* Header */}
         <div className="mb-10 flex items-center gap-3 sm:gap-4 lg:mb-14">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-            Proof
+            Experience at a Glance
           </h2>
 
           <div className="h-px flex-1 bg-border" />
@@ -121,20 +123,20 @@ export function StatsSection() {
           ))}
         </div>
 
-        {/* Problems Solved */}
+        {/* Highlights */}
         <div className="mt-10 rounded-2xl border border-border bg-card p-6 sm:mt-12 sm:p-8">
           <h3 className="mb-6 text-xl font-semibold text-foreground sm:text-2xl">
-            Problems I've Solved
+            Experience Highlights
           </h3>
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {[
-              "Built a real-time notification system with complex state handling",
-              "Designed multi-user collaboration logic from scratch",
-              "Solved real client constraints in production systems",
-              "Created structured learning systems for large batches",
-              "Integrated AI into development and teaching workflows",
-              "International collaboration with Drexel University",
+              "Built a real-time task management platform with live collaboration.",
+              "Developed an AI-powered recommendation system using NLP techniques.",
+              "Created a content-rich platform showcasing South India's history and culture.",
+              "Delivered a client website through requirement gathering and iterative feedback.",
+              "Designed technical presentations, quizzes, and learning material for 100+ students.",
+              "Collaborated with an international team from Drexel University on a customer engagement automation project.",
             ].map((item) => (
               <div
                 key={item}
