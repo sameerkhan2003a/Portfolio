@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import ThemeToggle from "@/components/ThemeToggle"
 
 const navLinks = [
   { name: "Home", id: "home" },
@@ -71,7 +72,7 @@ export function Navbar() {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center gap-6 lg:gap-8 md:flex">
+          <div className="hidden items-center gap-6 md:flex lg:gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -82,21 +83,28 @@ export function Navbar() {
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="h-11 w-11 rounded-xl md:hidden mx-3"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
+          {/* Mobile Right Side */}
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className="h-11 w-11 rounded-xl"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
